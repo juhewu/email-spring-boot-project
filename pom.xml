@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.juhewu</groupId>
+    <artifactId>email-spring-boot-project</artifactId>
+    <version>${revision}</version>
+    <modules>
+        <module>email-spring-boot-parent</module>
+        <module>email-spring-boot-autoconfigure</module>
+        <module>email-spring-boot-actuator</module>
+        <module>email-spring-boot-samples</module>
+        <module>email-spring-boot-starter</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <name>Juhe Email Spring Boot Project</name>
+    <description>聚合邮件的Spring Boot项目</description>
+    <url>https://github.com/juhewu/email-spring-boot-project</url>
+
+
+    <properties>
+        <maven_javadoc_version>3.0.1</maven_javadoc_version>
+        <maven_surefire_version>2.19.1</maven_surefire_version>
+        <revision>1.0-SNAPSHOT</revision>
+    </properties>
+
+    <organization>
+        <name>juhewu</name>
+        <url>https://github.com/juhewu/</url>
+    </organization>
+
+
+    <scm>
+        <url>https://github.com/juhewu/sms-spring-boot-project</url>
+        <connection>scm:git:git:////github.com/juhewu/sms-spring-boot-project.git</connection>
+        <developerConnection>scm:git:ssh://git@//github.com/juhewu/sms-spring-boot-project.git
+        </developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/juhewu/sms-spring-boot-project/issues</url>
+    </issueManagement>
+
+    <mailingLists>
+        <mailingList>
+            <name>Development List</name>
+            <subscribe>dev-subscribe@dubbo.apache.org</subscribe>
+            <unsubscribe>dev-unsubscribe@dubbo.apache.org</unsubscribe>
+            <post>dev@juhewu.org</post>
+        </mailingList>
+    </mailingLists>
+    <developers>
+        <developer>
+            <id>duanjiawei</id>
+            <name>段佳维</name>
+            <email>dev@juhewu.org</email>
+            <url>https://github.com/juhewu</url>
+        </developer>
+    </developers>
+
+</project>
