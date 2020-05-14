@@ -5,21 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.juhewu</groupId>
-    <artifactId>email-spring-boot-project</artifactId>
+    <artifactId>mail-spring-boot-project</artifactId>
     <version>${revision}</version>
     <modules>
-        <module>email-spring-boot-parent</module>
-        <module>email-spring-boot-autoconfigure</module>
-        <module>email-spring-boot-actuator</module>
-        <module>email-spring-boot-samples</module>
-        <module>email-spring-boot-starter</module>
+        <module>mail-spring-boot-parent</module>
+        <module>mail-spring-boot-autoconfigure</module>
+        <module>mail-spring-boot-actuator</module>
+        <module>mail-spring-boot-samples</module>
+        <module>mail-spring-boot-starter</module>
     </modules>
 
     <packaging>pom</packaging>
 
-    <name>Juhe Email Spring Boot Project</name>
+    <name>Juhe mail Spring Boot Project</name>
     <description>聚合邮件的Spring Boot项目</description>
-    <url>https://github.com/juhewu/email-spring-boot-project</url>
+    <url>https://github.com/juhewu/mail-spring-boot-project</url>
 
 
     <properties>

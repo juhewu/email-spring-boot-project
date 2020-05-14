@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.juhewu.mail.spring.boot.MailAutoConfiguration

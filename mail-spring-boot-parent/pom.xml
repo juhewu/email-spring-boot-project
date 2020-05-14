@@ -3,23 +3,25 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>email-spring-boot-project</artifactId>
+        <artifactId>mail-spring-boot-project</artifactId>
         <groupId>org.juhewu</groupId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>email-spring-boot-parent</artifactId>
+    <artifactId>mail-spring-boot-parent</artifactId>
     <packaging>pom</packaging>
-    <name>juhewu email Spring Boot :: Parent</name>
-    <description>juhewu email Spring Boot Parent</description>
+    <name>juhewu mail Spring Boot :: Parent</name>
+    <description>juhewu mail Spring Boot Parent</description>
 
 
     <properties>
         <java.version>1.8</java.version>
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
@@ -58,7 +60,10 @@
             <id>ali-maven</id>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
         </repository>
-
+        <repository>
+            <id>sonatype-maven</id>
+            <url>http://www.sonatype.org/nexus/content/groups/public</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>
@@ -111,22 +116,5 @@
     </build>
 
     <profiles>
-
-        <profile>
-            <!-- Spring Boot 2.0 -->
-            <id>spring-boot-2.0</id>
-            <properties>
-                <spring-boot.version>2.0.9.RELEASE</spring-boot.version>
-            </properties>
-        </profile>
-
-        <profile>
-            <!-- Spring Boot 2.1 -->
-            <id>spring-boot-2.1</id>
-            <properties>
-                <spring-boot.version>2.1.13.RELEASE</spring-boot.version>
-            </properties>
-        </profile>
-
     </profiles>
 </project>

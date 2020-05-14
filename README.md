@@ -1,1 +1,1 @@
-# email-spring-boot-project
+# mail-spring-boot-project

@@ -3,14 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>email-spring-boot-parent</artifactId>
+        <artifactId>mail-spring-boot-parent</artifactId>
         <groupId>org.juhewu</groupId>
         <version>${revision}</version>
-        <relativePath>../email-spring-boot-parent/pom.xml</relativePath>
+        <relativePath>../mail-spring-boot-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>email-spring-boot-samples</artifactId>
+    <artifactId>mail-spring-boot-samples</artifactId>
+    <modules>
+        <module>auto-configure-sample</module>
+        <module>mail-redis-repository-sample</module>
+    </modules>
 
-
+    <packaging>pom</packaging>
 </project>

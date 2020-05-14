@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mail-spring-boot-parent</artifactId>
+        <groupId>org.juhewu</groupId>
+        <version>${revision}</version>
+        <relativePath>../mail-spring-boot-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mail-spring-boot-starter</artifactId>
+    <packaging>jar</packaging>
+    <name>juhewu mail Spring Boot :: Starter</name>
+    <description>juhewu mail Spring Boot Starter</description>
+
+    <dependencies>
+        <!-- Spring Boot dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.juhewu</groupId>
+            <artifactId>mail-spring-boot-autoconfigure</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+    </dependencies>
+</project>

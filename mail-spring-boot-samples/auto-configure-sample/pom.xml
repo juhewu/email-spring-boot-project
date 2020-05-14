@@ -3,29 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>email-spring-boot-parent</artifactId>
+        <artifactId>mail-spring-boot-samples</artifactId>
         <groupId>org.juhewu</groupId>
         <version>${revision}</version>
-        <relativePath>../email-spring-boot-parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>email-spring-boot-starter</artifactId>
+    <artifactId>auto-configure-sample</artifactId>
     <packaging>jar</packaging>
-    <name>juhewu email Spring Boot :: Starter</name>
-    <description>juhewu email Spring Boot Starter</description>
+    <name>juhewu mail Spring Boot :: Sample : Auto-Configure</name>
+    <description>juhewu mail Spring Boot Auto-Configure Sample</description>
 
     <dependencies>
+
         <!-- Spring Boot dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.juhewu</groupId>
-            <artifactId>email-spring-boot-autoconfigure</artifactId>
+            <artifactId>mail-spring-boot-starter</artifactId>
             <version>${revision}</version>
         </dependency>
 

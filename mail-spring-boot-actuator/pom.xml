@@ -3,40 +3,44 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>email-spring-boot-parent</artifactId>
+        <artifactId>mail-spring-boot-parent</artifactId>
         <groupId>org.juhewu</groupId>
         <version>${revision}</version>
-        <relativePath>../email-spring-boot-parent/pom.xml</relativePath>
+        <relativePath>../mail-spring-boot-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>email-spring-boot-autoconfigure</artifactId>
+    <artifactId>mail-spring-boot-actuator</artifactId>
     <packaging>jar</packaging>
-    <name>juhewu email Spring Boot :: Auto-Configure</name>
-    <description>juhewu email Spring Boot Auto-Configure</description>
-
+    <name>juhewu mail Spring Boot :: Actuator</name>
+    <description>juhewu mail Spring Boot Actuator</description>
 
     <dependencies>
-        <!-- Spring Boot dependencies -->
+        <!-- Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
             <optional>true</optional>
         </dependency>
 
+        <!-- Sms autoconfigure -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-            <optional>true</optional>
+            <groupId>org.juhewu</groupId>
+            <artifactId>mail-spring-boot-autoconfigure</artifactId>
+            <version>${revision}</version>
         </dependency>
-
-
-<!-- ## todo
- &lt;!&ndash; Dubbo &ndash;&gt;
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo</artifactId>
-        </dependency>-->
 
         <!-- Test Dependencies -->
         <dependency>
