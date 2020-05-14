@@ -4,6 +4,8 @@ import org.juhewu.mail.CompositeMailAccountLocator;
 import org.juhewu.mail.InMemoryMailAccountRepository;
 import org.juhewu.mail.MailAccountLocator;
 import org.juhewu.mail.MailAccountRepository;
+import org.juhewu.mail.sender.MailSender;
+import org.juhewu.mail.sender.MailSenderImpl;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
@@ -60,5 +62,16 @@ public class MailAutoConfiguration {
     public MailAccountLocator emailAccountLocator(
             List<MailAccountLocator> emailAccountLocators) {
         return new CompositeMailAccountLocator(emailAccountLocators);
+    }
+
+    /**
+     * 邮件发送器
+     *
+     * @return
+     */
+    @Bean
+    @ConditionalOnMissingBean(MailSender.class)
+    public MailSenderImpl mailSender() {
+        return new MailSenderImpl();
     }
 }

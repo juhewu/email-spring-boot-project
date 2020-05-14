@@ -14,6 +14,7 @@
     <modules>
         <module>auto-configure-sample</module>
         <module>mail-redis-repository-sample</module>
+        <module>mail-spring-boot-send-sample</module>
     </modules>
 
     <packaging>pom</packaging>
