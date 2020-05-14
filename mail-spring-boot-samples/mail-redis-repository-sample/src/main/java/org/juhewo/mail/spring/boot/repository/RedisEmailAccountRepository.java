@@ -6,22 +6,22 @@ import org.juhewu.mail.MailAccountRepository;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * reids中的邮箱账户
+ * 账户存储到Redis
+ * 替换默认的内存存储，适和用于集群环境
  *
  * @author duanjw
+ * @see org.juhewu.mail.InMemoryMailAccountRepository 内存存储
  */
-@Component
 @Slf4j
 public class RedisEmailAccountRepository implements MailAccountRepository {
     /**
-     * 邮箱账户redis中的key
+     * 邮件账户redis中的key
      */
     private final String emailAccountKey = "email::accounts::key";
     private RedisTemplate redisTemplate;
@@ -30,12 +30,6 @@ public class RedisEmailAccountRepository implements MailAccountRepository {
         redisTemplate = new RedisTemplate();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         final Jackson2JsonRedisSerializer<MailAccount> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(MailAccount.class);
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        // 支持JAVA8时间格式
-//        objectMapper.registerModule(new ParameterNamesModule())
-//                .registerModule(new Jdk8Module())
-//                .registerModule(new JavaTimeModule());
-//        jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
         redisTemplate.setKeySerializer(redisTemplate.getStringSerializer());
         redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
         redisTemplate.setHashKeySerializer(redisTemplate.getStringSerializer());
@@ -44,7 +38,7 @@ public class RedisEmailAccountRepository implements MailAccountRepository {
     }
 
     /**
-     * 所有邮箱账户
+     * 所有邮件账户
      *
      * @return
      */
@@ -58,7 +52,7 @@ public class RedisEmailAccountRepository implements MailAccountRepository {
     }
 
     /**
-     * 根据邮箱账户id获取邮箱账户
+     * 根据邮件账户id获取邮件账户
      *
      * @param id
      * @return
@@ -69,7 +63,7 @@ public class RedisEmailAccountRepository implements MailAccountRepository {
     }
 
     /**
-     * 新增邮箱账户
+     * 新增邮件账户
      *
      * @param emailAccount
      */
@@ -79,7 +73,7 @@ public class RedisEmailAccountRepository implements MailAccountRepository {
     }
 
     /**
-     * 批量新增邮箱账户
+     * 批量新增邮件账户
      *
      * @param emailAccounts
      */
@@ -89,7 +83,7 @@ public class RedisEmailAccountRepository implements MailAccountRepository {
     }
 
     /**
-     * 根据id删除邮箱账户
+     * 根据id删除邮件账户
      *
      * @param id
      */
@@ -98,6 +92,11 @@ public class RedisEmailAccountRepository implements MailAccountRepository {
         redisTemplate.opsForHash().delete(emailAccountKey, id);
     }
 
+    /**
+     * 根据ids批量删除邮件账户
+     *
+     * @param ids
+     */
     @Override
     public void delete(List<String> ids) {
         redisTemplate.opsForHash().delete(emailAccountKey, ids);

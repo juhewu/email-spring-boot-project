@@ -9,19 +9,21 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 import java.util.List;
 
 /**
+ * 邮件账户Redis存储器
+ *
  * @author duanjw
  */
 @Slf4j
 @AllArgsConstructor
 @EnableAutoConfiguration
-@ComponentScan
+@Import(RedisEmailAccountRepository.class)
 public class MailAccountRedisRepositoryApplication {
-    
+
     private final MailAccountLocator mailAccountLocator;
     private final MailAccountRepository mailAccountRepository;
 
@@ -42,7 +44,7 @@ public class MailAccountRedisRepositoryApplication {
     /**
      * 初始化邮件账户
      *
-     * @see RedisEmailAccountRepository 账户会存储到redis
+     * @see RedisEmailAccountRepository 账户存储到Redis
      */
     private void add() {
         mailAccountRepository.add(new MailAccount().setId("1"));
